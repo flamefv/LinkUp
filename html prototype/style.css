@@ -1,0 +1,114 @@
+/* General Body & Reset Styles */
+:root { --orange: #ff7043; --blue: #42a5f5; }
+body { margin: 0; font-family: 'Roboto', sans-serif; background-color: #f0f2f5; color: #333; }
+.app-wrapper { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.hidden { display: none !important; }
+
+/* --- Main App Frame --- */
+.mobile-frame { width: 100%; max-width: 450px; height: 100vh; max-height: 900px; background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; position: relative; }
+
+/* --- Header --- */
+#app-header { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background-color: #fff; border-bottom: 1px solid #eee; }
+.header-logo { font-size: 1.6rem; font-weight: 700; color: var(--orange); margin: 0; flex: 1; }
+.header-main-content { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
+#header-title { font-size: 1.2rem; font-weight: 500; margin: 0; }
+#back-btn { display: flex; align-items: center; gap: 4px; font-size: 1rem; color: var(--orange); }
+.icon-button { background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.icon-button i { font-size: 1.75rem; color: #555; }
+
+/* --- Main Content & Pages --- */
+#app-main { flex: 1; overflow-y: auto; background-color: #fafafa; }
+.page { display: none; padding: 1rem; }
+.page.active { display: block; }
+#home-screen { padding: 0; }
+#post-feed { padding: 1rem; }
+
+/* Filter Bar */
+#filter-bar { display: flex; justify-content: space-between; align-items: center; background-color: #e3f2fd; padding: 0.5rem 1rem; }
+#filter-bar p { margin: 0; font-weight: 500; }
+#clear-filter-btn { background: none; border: 1px solid var(--blue); color: var(--blue); border-radius: 20px; padding: 0.25rem 0.75rem; cursor: pointer; }
+
+/* Post Card */
+.post-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 15px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.user-info { display: flex; align-items: center; gap: 0.75rem; }
+.user-info i { font-size: 2.5rem; color: #ccc; }
+.user-name { font-weight: 700; }
+.category-tag { padding: 0.3rem 0.8rem; border-radius: 20px; color: white; font-size: 0.75rem; font-weight: 500; }
+.category-tag.microjob { background-color: var(--orange); }
+.category-tag.collab { background-color: var(--blue); }
+.card-title { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; }
+.card-description { color: #666; line-height: 1.4; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 0.75rem; }
+.post-location { color: #888; font-size: 0.9rem; display: flex; align-items: center; gap: 4px; }
+.post-location i { font-size: 1rem; }
+.contact-btn { background-color: var(--orange); color: white; border: none; border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 500; }
+
+/* Explore Screen */
+#explore-screen .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.category-card { background-color: #e3f2fd; padding: 1.5rem; border-radius: 15px; text-align: center; font-size: 1rem; font-weight: 500; color: #1e88e5; cursor: pointer; transition: transform 0.2s; }
+.category-card:hover { transform: scale(1.05); }
+.category-card i { display: block; font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+/* Chat List Screen */
+.chat-item { display: flex; align-items: center; padding: 1rem; border-bottom: 1px solid #eee; cursor: pointer; }
+.chat-item:hover { background-color: #f9f9f9; }
+.chat-avatar i { font-size: 2.5rem; color: #ccc; margin-right: 1rem; }
+.chat-details { flex: 1; }
+.chat-name { font-weight: 700; }
+.chat-message { color: #777; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.chat-time { color: #aaa; font-size: 0.8rem; }
+#chat-screen { padding: 0; }
+
+/* Chat Detail Screen */
+#chat-detail-screen { display: flex; flex-direction: column; height: 100%; padding: 0; box-sizing: border-box; }
+.messages-container { flex: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column-reverse; }
+.message-bubble { max-width: 75%; padding: 0.6rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; line-height: 1.4; }
+.message-bubble.sent { background-color: var(--orange); color: white; align-self: flex-end; }
+.message-bubble.received { background-color: #e0e0e0; color: #333; align-self: flex-start; }
+.message-input-area { display: flex; padding: 0.5rem; border-top: 1px solid #eee; background-color: #fff; }
+.message-input-area input { flex: 1; border: 1px solid #ccc; border-radius: 20px; padding: 0.75rem 1rem; outline: none; }
+.message-input-area button { background: none; border: none; cursor: pointer; color: var(--orange); padding: 0.5rem; }
+.message-input-area button i { font-size: 1.75rem; }
+
+/* Profile Screen */
+#profile-screen { padding: 0; }
+.profile-header { text-align: center; padding: 2rem 1.5rem; background: linear-gradient(180deg, #fff, #f9f9f9); }
+.profile-photo { width: 100px; height: 100px; border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+.profile-name { font-size: 1.5rem; margin: 0; }
+.profile-location { display: inline-flex; align-items: center; gap: 0.25rem; color: #888; margin: 0.5rem 0; }
+.profile-location i { font-size: 1rem; }
+.profile-bio { color: #555; line-height: 1.5; margin-top: 1rem; }
+.profile-options { padding: 1rem; }
+.profile-button { display: flex; align-items: center; gap: 1rem; width: 100%; padding: 1rem; margin-bottom: 0.5rem; border: none; background-color: #f0f2f5; border-radius: 12px; text-align: left; font-size: 1rem; cursor: pointer; }
+.profile-button i { color: var(--orange); }
+
+/* Groups Screen */
+#groups-screen { display: flex; flex-direction: column; }
+#groups-list { flex: 1; }
+.group-item { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+.group-item h3 { margin: 0 0 0.5rem 0; }
+.group-item p { margin: 0; color: #777; }
+#create-group-btn { width: 100%; padding: 1rem; font-size: 1rem; }
+
+/* --- Modals & FAB --- */
+#fab { position: absolute; bottom: 90px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background-color: var(--orange); color: white; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 99; }
+#modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 100; }
+.modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 1.5rem 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); width: 90%; max-width: 500px; z-index: 101; }
+.modal h2 { margin-top: 0; text-align: center; margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem; }
+.modal-actions button { padding: 0.75rem 1.5rem; font-size: 1rem; cursor: pointer; border-radius: 8px; }
+.btn-primary { background-color: var(--orange); color: white; border: none; }
+.btn-secondary { border: 2px solid var(--orange); color: var(--orange); background-color: white; }
+
+/* --- Bottom Navigation --- */
+#bottom-nav { position: absolute; bottom: 0; left: 0; right: 0; height: 70px; background-color: white; display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #eee; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); }
+.nav-button { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; color: #999; transition: color 0.3s; }
+.nav-button.active { color: var(--orange); }
+.nav-button span { font-size: 0.75rem; }
+
+/* --- Responsive Design --- */
+@media (min-width: 451px) { body { background-color: #dcdcdc; } .mobile-frame { margin: 2rem 0; border: 1px solid #ccc; } }

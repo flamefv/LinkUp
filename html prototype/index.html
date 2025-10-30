@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkUp</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="mobile-frame">
+            <!-- App Header -->
+            <header id="app-header">
+                <h1 class="header-logo">LinkUp</h1>
+                <div class="header-main-content">
+                    <h2 id="header-title">Home</h2>
+                </div>
+                <button id="profile-nav-btn" class="icon-button">
+                    <i class="material-icons">account_circle</i>
+                </button>
+            </header>
+
+            <!-- Main Content Area -->
+            <main id="app-main">
+                <!-- Home / Feed Screen -->
+                <section id="home-screen" class="page active">
+                    <div id="filter-bar" class="hidden">
+                        <p id="filter-text"></p>
+                        <button id="clear-filter-btn">Clear</button>
+                    </div>
+                    <div id="post-feed"></div>
+                </section>
+
+                <!-- Explore / Categories Screen -->
+                <section id="explore-screen" class="page"></section>
+
+                <!-- Chat List Screen -->
+                <section id="chat-screen" class="page"></section>
+
+                <!-- NEW: Chat Detail Screen -->
+                <section id="chat-detail-screen" class="page"></section>
+
+                <!-- NEW: Groups Screen -->
+                <section id="groups-screen" class="page">
+                    <div id="groups-list"></div>
+                    <button id="create-group-btn" class="btn btn-primary">Create New Group</button>
+                </section>
+
+                <!-- Profile Screen -->
+                <section id="profile-screen" class="page"></section>
+            </main>
+
+            <!-- Floating Action Button (+) -->
+            <button id="fab" class="fab">
+                <i class="material-icons">add</i>
+            </button>
+
+            <!-- Bottom Navigation Bar -->
+            <nav id="bottom-nav">
+                <button class="nav-button active" data-page="home-screen"><i class="material-icons">home</i><span>Home</span></button>
+                <button class="nav-button" data-page="explore-screen"><i class="material-icons">explore</i><span>Explore</span></button>
+                <button class="nav-button" data-page="chat-screen"><i class="material-icons">chat_bubble_outline</i><span>Chat</span></button>
+                <button class="nav-button" data-page="groups-screen"><i class="material-icons">groups</i><span>Groups</span></button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div id="modal-overlay" class="hidden"></div>
+
+    <!-- Create Post Modal -->
+    <div id="new-post-modal" class="modal hidden">
+        <h2>Create New Post</h2>
+        <form id="post-form">
+            <div class="form-group"><label for="post-title">Title</label><input type="text" id="post-title" required></div>
+            <div class="form-group"><label for="post-description">Description</label><textarea id="post-description" rows="3" required></textarea></div>
+            <div class="form-group"><label for="post-location">Location</label><input type="text" id="post-location" placeholder="e.g., Downtown"></div>
+            <div class="form-group"><label for="post-zip">Zip Code</label><input type="text" id="post-zip" placeholder="e.g., 94102"></div>
+            <div class="form-group"><label for="post-category">Category</label><select id="post-category"><option value="Collab">Collab (Hobby)</option><option value="Microjob">Microjob (Paid)</option></select></div>
+            <div class="modal-actions"><button type="button" class="btn-secondary cancel-btn">Cancel</button><button type="submit" class="btn-primary">Post</button></div>
+        </form>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal hidden">
+        <h2>Edit Profile</h2>
+        <form id="edit-profile-form">
+            <div class="form-group"><label for="edit-name">Name</label><input type="text" id="edit-name" required></div>
+            <div class="form-group"><label for="edit-location">Location</label><input type="text" id="edit-location" required></div>
+            <div class="form-group"><label for="edit-bio">Bio</label><textarea id="edit-bio" rows="3" required></textarea></div>
+            <div class="modal-actions"><button type="button" class="btn-secondary cancel-btn">Cancel</button><button type="submit" class="btn-primary">Save Changes</button></div>
+        </form>
+    </div>
+
+    <!-- Create Group Modal -->
+    <div id="create-group-modal" class="modal hidden">
+        <h2>Create a Group</h2>
+        <form id="create-group-form">
+            <div class="form-group"><label for="group-name">Group Name</label><input type="text" id="group-name" required></div>
+            <div class="form-group"><label for="group-members">Add Members by Username</label><input type="text" id="group-members" placeholder="e.g., alex_w, jasmine_l" required></div>
+            <div class="modal-actions"><button type="button" class="btn-secondary cancel-btn">Cancel</button><button type="submit" class="btn-primary">Create</button></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
