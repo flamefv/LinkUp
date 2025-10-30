@@ -19,10 +19,7 @@ Built with React and TypeScript.
 
 Run the app:
 
-bash
-Copy code
+```bash
 npm run dev
-yaml
-Copy code
 
 
